@@ -4,24 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Utah Ring Guys — Custom Rings, No Retail Markup</title>
-  <meta name="description" content="Custom engagement rings and bands in Utah. We source from the same world-class jewelers as retail stores — without the markup. Save $1,000–$2,000. Text us." />
+  <meta name="description" content="Custom engagement rings and bands in Utah. We help you get the best ring for the best price. Text us." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #C5973A;
-      --gold-light: #F0DEB0;
-      --gold-bg: #FBF6EC;
-      --dark: #1C1C1C;
-      --charcoal: #3A3A3A;
-      --mid: #6B6B6B;
-      --cream: #FAFAF7;
-      --white: #FFFFFF;
-      --serif: 'Playfair Display', Georgia, serif;
+      --amber:   #C08A3A;
+      --amber-lt: #E8C97A;
+      --dark:    #0F0F0F;
+      --ink:     #1A1A1A;
+      --charcoal:#3C3C3C;
+      --mid:     #6B6B6B;
+      --stone:   #F5F2EE;
+      --white:   #FFFFFF;
       --sans: 'Inter', system-ui, sans-serif;
     }
 
@@ -29,806 +29,699 @@
 
     body {
       font-family: var(--sans);
-      background: var(--cream);
-      color: var(--dark);
+      background: var(--stone);
+      color: var(--ink);
       line-height: 1.6;
       font-size: 16px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── STICKY NAV ─────────────────────────────────────── */
+    /* ── NAV ──────────────────────────────────────────────── */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid #E8E0D0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E8E2D8;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 24px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 0 28px;
+      height: 54px;
     }
 
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--dark);
-      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--ink);
     }
 
-    .nav-logo span { color: var(--gold); }
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
 
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold);
+      display: inline-block;
+      background: var(--ink);
       color: var(--white);
       text-decoration: none;
-      font-family: var(--sans);
+      font-size: 0.78rem;
       font-weight: 600;
-      font-size: 0.85rem;
-      padding: 10px 18px;
-      border-radius: 6px;
-      letter-spacing: 0.03em;
-      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      border-radius: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
     }
 
-    .nav-cta:hover { background: #b08530; transform: translateY(-1px); }
+    .nav-cta:hover { background: #333; }
 
-    /* ── HERO ───────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      nav { padding: 0 16px; }
+      .nav-logo-text { font-size: 0.78rem; }
+      .nav-logo-mark { width: 24px; height: 24px; }
+      .nav-cta { font-size: 0.72rem; padding: 8px 12px; }
+    }
+
+    /* ── HERO ─────────────────────────────────────────────── */
     .hero {
-      background: var(--dark);
+      background:
+        radial-gradient(ellipse 70% 80% at 75% 50%, rgba(90,70,30,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 20% 30%, rgba(255,255,255,0.03) 0%, transparent 55%),
+        linear-gradient(160deg, #111 0%, #181410 60%, #0D0D0D 100%);
       color: var(--white);
-      padding: 80px 24px 72px;
+      padding: 100px 28px 90px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
+    /* Geometric accent — subtle lines, not black-and-yellow */
+    .hero-mark {
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(197,151,58,0.18) 0%, transparent 65%);
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 420px;
+      height: 420px;
       pointer-events: none;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 700px) {
+      .hero-mark { width: 240px; height: 240px; right: -30px; opacity: 0.3; }
     }
 
     .hero-eyebrow {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--amber-lt);
+      opacity: 0.75;
       margin-bottom: 20px;
-      border: 1px solid rgba(197,151,58,0.4);
-      padding: 6px 14px;
-      border-radius: 20px;
+      display: block;
     }
 
     .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
       font-weight: 700;
-      line-height: 1.15;
+      line-height: 1.1;
       margin-bottom: 20px;
-      max-width: 720px;
+      max-width: 640px;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold-light);
+      position: relative;
+      letter-spacing: -0.02em;
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: #C8C2B8;
-      max-width: 560px;
+      font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+      color: #8A8278;
+      max-width: 440px;
       margin: 0 auto 40px;
-      font-weight: 300;
-      line-height: 1.7;
+      font-weight: 400;
+      line-height: 1.75;
+      position: relative;
     }
 
     .hero-cta-group {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      position: relative;
     }
 
     .btn-primary {
       display: inline-block;
-      background: var(--gold);
+      background: var(--amber);
       color: var(--white);
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.05rem;
-      padding: 18px 40px;
-      border-radius: 8px;
-      letter-spacing: 0.02em;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(197,151,58,0.35);
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
     }
 
     .btn-primary:hover {
-      background: #b08530;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(197,151,58,0.45);
+      background: #a87830;
+      transform: translateY(-1px);
     }
 
-    .hero-number {
-      font-size: 1.5rem;
-      font-weight: 700;
-      font-family: var(--serif);
-      letter-spacing: 0.04em;
-      color: var(--white);
+    .hero-or {
+      font-size: 0.8rem;
+      color: #4A4440;
     }
 
-    .hero-secondary {
-      font-size: 0.85rem;
-      color: #998F82;
-    }
-
-    .hero-secondary a {
-      color: #B0A898;
+    .hero-or a {
+      color: #5E5650;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .hero-secondary a:hover { color: var(--gold-light); }
+    .hero-or a:hover { color: #8A7E72; }
 
-    /* ── SECTION SHARED ─────────────────────────────────── */
-    section { padding: 72px 24px; }
+    /* ── SHARED ───────────────────────────────────────────── */
+    section { padding: 80px 28px; }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-    }
+    .container { max-width: 880px; margin: 0 auto; }
 
-    .section-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
+    .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--amber);
       margin-bottom: 12px;
     }
 
     .section-title {
-      font-family: var(--serif);
       font-size: clamp(1.7rem, 4vw, 2.4rem);
       font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 20px;
-      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--ink);
+      letter-spacing: -0.02em;
     }
 
     .section-body {
-      font-size: 1.05rem;
+      font-size: 0.97rem;
       color: var(--charcoal);
-      line-height: 1.75;
-      max-width: 640px;
+      line-height: 1.8;
+      max-width: 580px;
     }
 
-    /* ── THE CONNECTION ─────────────────────────────────── */
-    .connection {
+    /* ── STRIP ────────────────────────────────────────────── */
+    .strip {
       background: var(--white);
-      border-top: 1px solid #EAE4D8;
+      border-top: 1px solid #EAE4DC;
+      border-bottom: 1px solid #EAE4DC;
+      padding: 13px 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9A9088;
     }
 
-    .connection-inner {
+    .strip span { padding: 2px 14px; }
+    .strip .dot { padding: 0; color: #CCC5BA; font-size: 0.45rem; }
+
+    /* ── HOW THIS WORKS ───────────────────────────────────── */
+    .how {
+      background:
+        linear-gradient(180deg, var(--white) 0%, #F8F4EF 100%);
+    }
+
+    .how-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 44px;
+      margin-top: 40px;
     }
 
-    @media (min-width: 680px) {
-      .connection-inner {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-      }
+    @media (min-width: 700px) {
+      .how-grid { grid-template-columns: 1fr 1fr; align-items: start; }
     }
 
-    .connection-quote {
-      font-family: var(--serif);
-      font-size: clamp(1.3rem, 3vw, 1.7rem);
-      font-style: italic;
-      color: var(--dark);
-      line-height: 1.5;
-      border-left: 3px solid var(--gold);
-      padding-left: 20px;
+    .how-lead {
+      font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--ink);
     }
 
-    .highlight-box {
-      background: var(--white);
-      border: 1px solid var(--gold-light);
-      border-radius: 10px;
-      padding: 28px 24px;
-    }
-
-    .highlight-box p {
+    .how-detail p {
+      font-size: 0.95rem;
       color: var(--charcoal);
-      font-size: 0.97rem;
-      line-height: 1.75;
+      line-height: 1.82;
+      margin-bottom: 14px;
     }
 
-    .highlight-box strong { color: var(--dark); }
+    .how-detail p:last-child { margin-bottom: 0; }
 
-    /* ── SAVINGS ────────────────────────────────────────── */
+    /* ── NO GALLERY (moved up) ────────────────────────────── */
+    .no-gallery {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .no-gallery-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (min-width: 700px) {
+      .no-gallery-inner { grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    }
+
+    .no-gallery .section-title { color: var(--white); }
+
+    .no-gallery p {
+      font-size: 0.95rem;
+      color: #6A6258;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      border: 1px solid #3A3530;
+      color: #9A9088;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 11px 22px;
+      border-radius: 4px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--amber);
+      color: var(--amber-lt);
+    }
+
+    /* ── SAVINGS ──────────────────────────────────────────── */
     .savings {
-      background: var(--dark);
+      background:
+        radial-gradient(ellipse 60% 80% at 50% 60%, rgba(80,55,15,0.3) 0%, transparent 70%),
+        linear-gradient(170deg, #141210 0%, #0D0D0B 100%);
       color: var(--white);
       text-align: center;
     }
 
+    .savings-pre {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: #4A4540;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
     .savings-number {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 10vw, 6rem);
+      font-size: clamp(3.2rem, 12vw, 6.5rem);
       font-weight: 700;
-      color: var(--gold);
+      color: var(--amber-lt);
       line-height: 1;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
     }
 
-    .savings-label {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: #C8C2B8;
-      font-weight: 300;
-      max-width: 520px;
-      margin: 0 auto 32px;
-      line-height: 1.6;
+    .savings-post {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: #5A5248;
+      font-weight: 400;
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    /* ── WHAT WE DO ─────────────────────────────────────── */
-    .what-we-do { background: var(--white); }
+    /* ── WHAT WE MAKE ─────────────────────────────────────── */
+    .what-we-make {
+      background: var(--white);
+    }
 
     .ring-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
       margin-top: 40px;
     }
 
     .ring-card {
-      border: 1px solid #EAE4D8;
-      border-radius: 10px;
-      padding: 28px 22px;
-      text-align: center;
-      background: var(--cream);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .ring-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 4px 18px rgba(197,151,58,0.12);
+      background: var(--stone);
+      border: 1px solid #E4DDD3;
+      border-radius: 6px;
+      padding: 30px 24px 26px;
+      cursor: default;
+      user-select: none;
     }
 
     .ring-card.featured {
-      border-color: var(--gold);
-      border-width: 2px;
       background: var(--white);
+      border-color: #C9A96A;
     }
 
-    .ring-icon {
-      font-size: 2.2rem;
-      margin-bottom: 14px;
-      display: block;
+    .ring-card-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--amber);
+      margin-bottom: 16px;
+      opacity: 0.85;
     }
 
     .ring-card h3 {
-      font-family: var(--serif);
-      font-size: 1.15rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: 8px;
-      color: var(--dark);
+      color: var(--ink);
+      letter-spacing: -0.01em;
     }
 
     .ring-card p {
-      font-size: 0.9rem;
+      font-size: 0.87rem;
       color: var(--mid);
-      line-height: 1.6;
-    }
-
-    .ring-badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
-
-    /* ── SAVINGS PREFIX ────────────────────────────────── */
-    .savings-prefix {
-      font-size: 0.95rem;
-      color: #998F82;
-      font-weight: 400;
-      margin-bottom: 8px;
-      letter-spacing: 0.01em;
-    }
-
-/* ── CUSTOM PROCESS STRIP ───────────────────────────── */
-    .custom-process {
-      margin-top: 40px;
-      background: var(--dark);
-      border-radius: 10px;
-      padding: 24px 28px;
-    }
-
-    .custom-process-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-
-    .custom-process-steps {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .cp-step {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.88rem;
-      color: #C8C2B8;
-      font-weight: 400;
-    }
-
-    .cp-icon { font-size: 1rem; flex-shrink: 0; }
-
-    .cp-arrow {
-      color: var(--gold);
-      font-size: 1rem;
-      font-weight: 300;
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 600px) {
-      .cp-arrow { display: none; }
-      .cp-step { width: 100%; padding: 4px 0; border-bottom: 1px solid #2E2E2E; }
-      .cp-step:last-child { border-bottom: none; }
-    }
-
-    /* ── HOW IT WORKS ───────────────────────────────────── */
-    .how-it-works { background: var(--cream); }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
-    }
-
-    .step {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .step-num {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.1rem;
-      font-family: var(--serif);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .step h3 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .step p {
-      font-size: 0.93rem;
-      color: var(--charcoal);
       line-height: 1.65;
     }
 
-    /* ── ABOUT US ───────────────────────────────────────── */
-    .about { background: var(--white); }
+    .ring-card-note {
+      display: inline-block;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-top: 12px;
+    }
+
+    /* ── ABOUT ────────────────────────────────────────────── */
+    .about {
+      background: linear-gradient(180deg, #F8F4EF 0%, var(--stone) 100%);
+    }
 
     .about-inner {
       display: grid;
       grid-template-columns: 1fr;
       gap: 40px;
-      align-items: center;
+      align-items: start;
     }
 
-    @media (min-width: 680px) {
-      .about-inner { grid-template-columns: 280px 1fr; }
+    @media (min-width: 700px) {
+      .about-inner { grid-template-columns: 240px 1fr; }
     }
 
-    .photo-placeholder {
+    .about-photo {
       width: 100%;
-      max-width: 280px;
-      aspect-ratio: 3/4;
-      background: linear-gradient(145deg, #E8E0D0, #D4C9B5);
-      border-radius: 10px;
+      max-width: 240px;
+      aspect-ratio: 4/5;
+      background: linear-gradient(145deg, #E8E2D8, #DDD5C8);
+      border-radius: 6px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-      color: #9A9080;
-      font-size: 0.85rem;
+      gap: 10px;
+      border: 1px dashed #C4BBB0;
+      color: #A09488;
+      font-size: 0.78rem;
       font-weight: 500;
-      border: 2px dashed #C8BDAA;
-      text-align: center;
-      padding: 20px;
+      letter-spacing: 0.03em;
     }
 
-    .photo-placeholder .photo-icon { font-size: 2rem; opacity: 0.5; }
+    .about-photo svg { opacity: 0.3; }
 
-    .about-text h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.5rem, 3.5vw, 2rem);
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
+    .about-text .section-title { font-size: clamp(1.4rem, 3vw, 1.9rem); }
 
     .about-text p {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       color: var(--charcoal);
-      line-height: 1.8;
+      line-height: 1.82;
       margin-bottom: 14px;
     }
 
-    /* ── NO GALLERY ─────────────────────────────────────── */
-    .no-gallery {
-      background: var(--cream);
-      border-top: 1px solid #EAE4D8;
-      text-align: center;
-    }
+    .about-text p:last-child { margin-bottom: 0; }
 
-    .no-gallery-box {
-      max-width: 580px;
-      margin: 0 auto;
-    }
-
-    .no-gallery-box .icon { font-size: 2.2rem; margin-bottom: 16px; }
-
-    .no-gallery-box h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
-      margin-bottom: 16px;
-      color: var(--dark);
-    }
-
-    .no-gallery-box p {
-      color: var(--charcoal);
-      font-size: 0.97rem;
-      line-height: 1.75;
-      margin-bottom: 28px;
-    }
-
-    /* ── FINAL CTA ──────────────────────────────────────── */
+    /* ── FINAL CTA ────────────────────────────────────────── */
     .final-cta {
-      background: var(--dark);
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 40%, rgba(90,65,20,0.25) 0%, transparent 65%),
+        linear-gradient(160deg, #0F0F0F 0%, #141210 100%);
       color: var(--white);
       text-align: center;
-      padding: 80px 24px;
+      padding: 100px 28px;
     }
 
     .final-cta h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-size: clamp(1.9rem, 5.5vw, 3.2rem);
       font-weight: 700;
-      margin-bottom: 14px;
-      line-height: 1.2;
+      margin-bottom: 10px;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
     }
 
-    .final-cta h2 em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    .final-cta p {
-      color: #B0A898;
-      font-size: 1rem;
-      margin-bottom: 40px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+    .final-cta .sub {
+      color: #4A4540;
+      font-size: 0.93rem;
+      margin-bottom: 44px;
+      font-weight: 400;
     }
 
     .contact-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .contact-number {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
       font-weight: 700;
       color: var(--white);
       text-decoration: none;
-      letter-spacing: 0.04em;
+      letter-spacing: -0.01em;
       transition: color 0.2s;
     }
 
-    .contact-number:hover { color: var(--gold-light); }
+    .contact-number:hover { color: var(--amber-lt); }
 
     .contact-email {
-      font-size: 0.9rem;
-      color: #776F63;
+      font-size: 0.82rem;
+      color: #3A3530;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .contact-email:hover { color: #B0A898; }
+    .contact-email:hover { color: #5E5650; }
 
-    /* ── FOOTER ─────────────────────────────────────────── */
+    /* ── FOOTER ───────────────────────────────────────────── */
     footer {
-      background: #111;
+      background: #080808;
       text-align: center;
-      padding: 20px 24px;
-      font-size: 0.8rem;
-      color: #554E45;
+      padding: 18px 24px;
+      font-size: 0.72rem;
+      color: #2E2A26;
+      letter-spacing: 0.04em;
     }
 
-/* ── NAV mobile tweak ───────────────────────────────── */
+    /* ── MOBILE TOUCHES ───────────────────────────────────── */
     @media (max-width: 480px) {
-      .nav-cta {
-        font-size: 0.78rem;
-        padding: 8px 12px;
-      }
-    }
-
-    /* ── DIVIDER ────────────────────────────────────────── */
-    .divider {
-      text-align: center;
-      color: var(--gold-light);
-      font-size: 1.2rem;
-      letter-spacing: 0.3em;
-      padding: 4px 0;
+      section { padding: 64px 20px; }
+      .hero { padding: 80px 20px 72px; }
+      .final-cta { padding: 80px 20px; }
+      .btn-primary { width: 100%; max-width: 340px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav>
-    <div class="nav-logo">Utah <span>Ring</span> Guys</div>
-    <a href="sms:8019998132?body=Hey%2C%20I%20saw%20your%20card%20and%20I%27d%20love%20to%20learn%20more%20about%20a%20custom%20ring." class="nav-cta">Text Us · 801-999-8132</a>
+    <div class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="28" height="28" rx="4" fill="#0F0F0F"/>
+        <path d="M14 4.5 L23.5 11 L14 23.5 L4.5 11 Z" stroke="#C08A3A" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M4.5 11 L9.5 7 L14 4.5 L18.5 7 L23.5 11" stroke="#C08A3A" stroke-width="1.4" stroke-linejoin="round"/>
+        <line x1="4.5" y1="11" x2="23.5" y2="11" stroke="#C08A3A" stroke-width="0.7" opacity="0.4"/>
+      </svg>
+      <span class="nav-logo-text">Utah Ring Guys</span>
+    </div>
+    <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring." class="nav-cta">Text Us &nbsp;·&nbsp; 801-999-8132</a>
   </nav>
 
 
-  <!-- ── HERO ────────────────────────────────────────────── -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <span class="hero-eyebrow">Custom Rings · Utah-Made · No Retail Markup</span>
-      <h1>The right guys for the <br><em>Right Ring</em></h1>
+
+    <!-- Geometric watermark — white/silver, readable, not gold-heavy -->
+    <svg class="hero-mark" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="150" cy="150" r="120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+      <circle cx="150" cy="150" r="80"  stroke="rgba(255,255,255,0.05)" stroke-width="0.75"/>
+      <circle cx="150" cy="150" r="40"  stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+      <path d="M150 30 L270 150 L150 270 L30 150 Z" stroke="rgba(255,255,255,0.06)" stroke-width="0.75"/>
+      <path d="M30 150 L90 90 L150 30 L210 90 L270 150" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+      <line x1="30"  y1="150" x2="270" y2="150" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+      <line x1="150" y1="30"  x2="150" y2="270" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+    </svg>
+
+    <div class="container" style="position:relative;">
+      <span class="hero-eyebrow">Custom Rings · Utah · No Retail Markup</span>
+      <h1>The right guys<br>for the right ring.</h1>
       <p class="hero-sub">
-        We source from the same world-class jewelers as the high-end retail stores —
-        and work with you directly, without the markup. Every piece is made to order.
-        Every conversation is with a real person.
+        We help you get the best ring for the best price —
+        wherever that ends up being. No pressure, no markup, no runaround.
       </p>
       <div class="hero-cta-group">
-        <a href="sms:8019998132?body=Hey%2C%20I%20saw%20your%20card%20and%20I%27d%20love%20to%20learn%20more%20about%20a%20custom%20ring." class="btn-primary">Text Us to Get Started — 801-999-8132</a>
-        <div class="hero-secondary">
-          Or email <a href="mailto:reed.laker1@gmail.com">reed.laker1@gmail.com</a>
+        <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring." class="btn-primary">
+          Text Us to Get Started &nbsp;·&nbsp; 801-999-8132
+        </a>
+        <div class="hero-or">
+          or email <a href="mailto:reed.laker1@gmail.com">reed.laker1@gmail.com</a>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ── THE CONNECTION ──────────────────────────────────── -->
-  <section class="connection">
+  <!-- CREDENTIAL STRIP -->
+  <div class="strip" aria-hidden="true">
+    <span>Made to Order</span><span class="dot">◆</span>
+    <span>Premium Materials</span><span class="dot">◆</span>
+    <span>Utah-Based</span><span class="dot">◆</span>
+    <span>No Retail Markup</span><span class="dot">◆</span>
+    <span>Every Ring Unique</span>
+  </div>
+
+
+  <!-- HOW THIS WORKS -->
+  <section class="how">
     <div class="container">
-      <div class="section-eyebrow">Why Us</div>
-      <div class="connection-inner">
+      <div class="eyebrow">How this works</div>
+      <div class="how-grid">
         <div>
-          <div class="section-title">We Have a Connection. You Benefit From It.</div>
-          <blockquote class="connection-quote">
-            "We're not a retail store. We know where the rings actually come from — and now you do too."
-          </blockquote>
+          <div class="section-title">Think of us as the friend who actually knows the business.</div>
         </div>
-        <div class="highlight-box">
-          <p>
-            High-end jewelry stores buy from <strong>world-class manufacturers</strong> and then mark the price up significantly — sometimes 2–3x — to cover their showroom, their staff, and their overhead.
-          </p>
-          <br />
-          <p>
-            We buy from <strong>those same top-tier sources</strong> and work with you directly. No showroom. No sales floor. Just a real conversation, a beautiful custom ring, and a price that actually makes sense.
-          </p>
-          <br />
-          <p>
-            Based right here in <strong>Utah</strong> — these aren't mass-produced rings. Every single piece is made custom, directly for you.
-          </p>
+        <div class="how-detail">
+          <p>Most people buying an engagement ring don't know what they're actually paying for — the ring, or the store. Retail jewelers buy from world-class manufacturers, then add 200–300% to cover their overhead. The ring itself didn't cost that.</p>
+          <p>We work with those same manufacturers and help you figure out exactly what you want. If a retail store turns out to be the right move for you, we'll tell you that too. Our goal is the best ring at the best price — not just a sale.</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ── SAVINGS ─────────────────────────────────────────── -->
+  <!-- NO GALLERY (up here so people see it before they wonder) -->
+  <section class="no-gallery">
+    <div class="container">
+      <div class="no-gallery-inner">
+        <div>
+          <div class="eyebrow" style="color: var(--amber);">About our portfolio</div>
+          <div class="section-title">Why aren't there photos here?</div>
+        </div>
+        <div>
+          <p>Every ring we've done belongs to whoever's wearing it. Putting someone's engagement ring on a website without asking felt wrong, so we don't.</p>
+          <p>But we have plenty to show you. Text us and we'll send over real examples directly — past work, options, comparisons, whatever's helpful. Takes 30 seconds.</p>
+          <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring." class="btn-ghost">Text us to see examples →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SAVINGS -->
   <section class="savings">
     <div class="container">
-      <p class="savings-prefix">Couples who work with us instead of a retail store typically keep</p>
+      <p class="savings-pre">Most people save between</p>
       <div class="savings-number">$1,000–$2,000</div>
-      <p class="savings-label">
-        in their pocket on the engagement ring alone — same quality, same world-class
-        jewelers, without the retail markup. That's real money back in your hands.
-      </p>
+      <p class="savings-post">on an engagement ring compared to retail. Same materials, same quality — without the showroom margin built in.</p>
     </div>
   </section>
 
 
-  <!-- ── WHAT WE DO ──────────────────────────────────────── -->
-  <section class="what-we-do">
+  <!-- WHAT WE MAKE -->
+  <section class="what-we-make">
     <div class="container">
-      <div class="section-eyebrow">What We Make</div>
-      <div class="section-title">Not Off a Shelf. Made for You.</div>
+      <div class="eyebrow">What we work on</div>
+      <div class="section-title">Rings for every occasion.</div>
       <p class="section-body">
-        Every ring we sell is made to order — designed around you, not pulled
-        from a display case. Want something from a premium catalog? Done. Want
-        something that exists nowhere else on earth? We can build that too.
+        Engagement rings are the most common ask, but we work on anything.
+        Text us whatever you're thinking about and we'll take it from there.
       </p>
       <div class="ring-grid">
+
         <div class="ring-card featured">
-          <span class="ring-icon">💍</span>
+          <svg class="ring-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 3 L33 13 L18 33 L3 13 Z"/>
+            <path d="M3 13 L10 7.5 L18 3 L26 7.5 L33 13"/>
+            <line x1="3" y1="13" x2="33" y2="13" stroke-opacity="0.5"/>
+          </svg>
           <h3>Engagement Rings</h3>
-          <p>Have a picture? A vague idea? Nothing yet? Doesn't matter. We'll design it with you from the ground up — or help you find the perfect ready-to-customize style — and make sure it fits your vision and your budget.</p>
-          <span class="ring-badge">Most Popular</span>
+          <p>The most important ring you'll buy. We'll help you understand what you're actually paying for and make sure you feel great about it — no pressure, no upsell.</p>
+          <span class="ring-card-note">Most common ask</span>
         </div>
+
         <div class="ring-card">
-          <span class="ring-icon">🪙</span>
+          <svg class="ring-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <ellipse cx="18" cy="18" rx="13" ry="13"/>
+            <ellipse cx="18" cy="18" rx="13" ry="4.5"/>
+          </svg>
           <h3>Men's Bands</h3>
-          <p>Classic metals, textured finishes, inlays, engravings, or completely one-of-a-kind. We work with you on the details so you end up with something you'll actually want to wear every day.</p>
+          <p>Classic, textured, inlaid, engraved, or completely original. We can pull from a wide range of styles or build something from scratch.</p>
         </div>
+
         <div class="ring-card">
-          <span class="ring-icon">✨</span>
+          <svg class="ring-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="18" cy="20" r="11"/>
+            <path d="M14 10 L18 4 L22 10" stroke-linejoin="round"/>
+            <circle cx="18" cy="6.5" r="1.8" fill="currentColor" stroke="none"/>
+          </svg>
           <h3>Women's Bands</h3>
-          <p>Wedding bands, stacking sets, anniversary rings — delicate or bold, simple or loaded with stones. Tell us what you're imagining and we'll make it real.</p>
+          <p>Wedding bands, stacking sets, anniversary pieces. Minimal or stone-set, simple or detailed — whatever you're picturing.</p>
         </div>
-      </div>
 
-      <div class="custom-process">
-        <div class="custom-process-label">For the fully custom builds</div>
-        <div class="custom-process-steps">
-          <div class="cp-step">
-            <span class="cp-icon">✏️</span>
-            <span>We design it in CAD — exactly to spec</span>
-          </div>
-          <div class="cp-arrow">→</div>
-          <div class="cp-step">
-            <span class="cp-icon">🖨️</span>
-            <span>3D printed, then cast in your metal of choice</span>
-          </div>
-          <div class="cp-arrow">→</div>
-          <div class="cp-step">
-            <span class="cp-icon">💎</span>
-            <span>Finished by hand and stones set</span>
-          </div>
-          <div class="cp-arrow">→</div>
-          <div class="cp-step">
-            <span class="cp-icon">📦</span>
-            <span>Delivered to you — one of a kind</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ── HOW IT WORKS ────────────────────────────────────── -->
-  <section class="how-it-works">
-    <div class="container">
-      <div class="section-eyebrow">The Process</div>
-      <div class="section-title">Simple. Personal. No Pressure.</div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Text Us Your Idea</h3>
-          <p>
-            Don't know what you want yet? That's fine — just say hi. We'll ask
-            you a few easy questions and figure it out together.
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>We Find Your Ring</h3>
-          <p>
-            We pull from the same collection high-end retailers use and find
-            exactly what fits your style and budget — no upsells, no pressure.
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>You Save. They Love It.</h3>
-          <p>
-            You get a stunning, custom ring at a price that makes sense.
-            Delivered and done.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── ABOUT ────────────────────────────────────────────── -->
+  <!-- ABOUT -->
   <section class="about">
     <div class="container">
       <div class="about-inner">
-        <div class="photo-placeholder">
-          <span class="photo-icon">📷</span>
-          <span>Photo of us coming soon</span>
+        <div class="about-photo">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="#A09488" stroke-width="1.25">
+            <rect x="3" y="7" width="32" height="24" rx="2"/>
+            <circle cx="19" cy="19" r="6"/>
+          </svg>
+          <span>Photo coming soon</span>
         </div>
         <div class="about-text">
-          <div class="section-eyebrow">Who We Are</div>
-          <h2>Real People.<br />Right Here in Utah.</h2>
-          <p>
-            We're not a chain store. We're not a website. We're a small team based
-            in Utah with genuine relationships inside the jewelry industry — and we
-            started this because it felt wrong that most people overpay for rings
-            when they don't have to.
-          </p>
-          <p>
-            When you reach out, you're talking to us directly. Not a call center,
-            not a bot. We'll figure out exactly what you're looking for and make
-            sure you feel great about it before anything is finalized.
-          </p>
+          <div class="eyebrow">Who we are</div>
+          <div class="section-title">We're Reed, Cameron,<br>Ethan, and Thane.</div>
+          <p>We're from Utah. We got tired of watching friends and family spend way more than they needed to on rings, so we started helping — and it grew from there.</p>
+          <p>We have real access to the manufacturers behind the high-end retail stores, which means we can get you the same product without the markup. But we're not here to hard-sell you anything. If you text us, we'll be honest with you.</p>
+          <p>That's the whole thing.</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ── NO GALLERY ──────────────────────────────────────── -->
-  <section class="no-gallery">
-    <div class="container">
-      <div class="no-gallery-box">
-        <div class="icon">🔒</div>
-        <h2>Want to See Our Work?</h2>
-        <p>
-          Every ring we've made belongs to the person wearing it — we respect
-          that. We don't post other people's rings publicly without their
-          permission.
-        </p>
-        <p>
-          Happy to share examples directly though — just reach out and we'll walk you through
-          what we've done for other people. No obligation, no pressure.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── FINAL CTA ────────────────────────────────────────── -->
+  <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Ready? <em>Just Text Us.</em></h2>
-      <p>
-        One text is all it takes to get started. We'll take it from there.
-      </p>
+      <h2>Just text us.<br>Seriously, that's it.</h2>
+      <p class="sub">One text starts the whole thing. No obligation, no pressure.</p>
       <div class="contact-block">
-        <a href="sms:8019998132?body=Hey%2C%20I%20saw%20your%20card%20and%20I%27d%20love%20to%20learn%20more%20about%20a%20custom%20ring." class="btn-primary" style="font-size: 1.05rem; padding: 18px 44px;">
+        <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring." class="btn-primary" style="font-size: 0.88rem; padding: 15px 40px;">
           Text 801-999-8132
         </a>
         <a href="tel:8019998132" class="contact-number">801-999-8132</a>
@@ -838,12 +731,10 @@
   </section>
 
 
-  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <!-- FOOTER -->
   <footer>
-    <p>© 2024 Utah Ring Guys · Utah-based · Custom rings sourced from top-tier jewelers · utahringguys.com</p>
+    <p>© 2025 Utah Ring Guys &nbsp;·&nbsp; Utah-based &nbsp;·&nbsp; utahringguys.com</p>
   </footer>
-
-
 
 </body>
 </html>
