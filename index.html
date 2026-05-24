@@ -425,6 +425,24 @@
       margin-top: 12px;
     }
 
+    /* ── RING LIST ────────────────────────────────────────── */
+    .ring-list {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ring-list li {
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      padding: 14px 0;
+      border-bottom: 1px solid #EAE4DC;
+    }
+
+    .ring-list li:first-child { border-top: 1px solid #EAE4DC; }
+
     /* ── ABOUT ────────────────────────────────────────────── */
     .about {
       background: linear-gradient(180deg, #F8F4EF 0%, var(--stone) 100%);
@@ -575,7 +593,7 @@
     </svg>
 
     <div class="container" style="position:relative;">
-      <span class="hero-eyebrow">Custom Rings · Utah</span>
+      <span class="hero-eyebrow">Custom Rings</span>
       <h1>The right guys<br>for the right ring.</h1>
       <p class="hero-sub">
         Best ring for the best price. No pressure, no markup.
@@ -590,12 +608,6 @@
 
 
   <!-- CREDENTIAL STRIP -->
-  <div class="strip" aria-hidden="true">
-    <span>Made to Order</span><span class="dot">◆</span>
-    <span>Premium Materials</span><span class="dot">◆</span>
-    <span>Utah-Based</span><span class="dot">◆</span>
-    <span>Every Ring Unique</span>
-  </div>
 
 
   <!-- HOW THIS WORKS -->
@@ -648,38 +660,11 @@
     <div class="container">
       <div class="eyebrow">What we work on</div>
       <div class="section-title">What we work on.</div>
-      <div class="ring-grid">
-
-        <div class="ring-card featured">
-          <svg class="ring-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 3 L33 13 L18 33 L3 13 Z"/>
-            <path d="M3 13 L10 7.5 L18 3 L26 7.5 L33 13"/>
-            <line x1="3" y1="13" x2="33" y2="13" stroke-opacity="0.5"/>
-          </svg>
-          <h3>Engagement Rings</h3>
-          <p>Most common ask. We'll make sure you know exactly what you're paying for.</p>
-        </div>
-
-        <div class="ring-card">
-          <svg class="ring-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <ellipse cx="18" cy="18" rx="13" ry="13"/>
-            <ellipse cx="18" cy="18" rx="13" ry="4.5"/>
-          </svg>
-          <h3>Men's Bands</h3>
-          <p>Classic or completely custom. Wide range of styles and materials.</p>
-        </div>
-
-        <div class="ring-card">
-          <svg class="ring-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="18" cy="20" r="11"/>
-            <path d="M14 10 L18 4 L22 10" stroke-linejoin="round"/>
-            <circle cx="18" cy="6.5" r="1.8" fill="currentColor" stroke="none"/>
-          </svg>
-          <h3>Women's Bands</h3>
-          <p>Wedding bands, stacking sets, anniversary pieces.</p>
-        </div>
-
-      </div>
+      <ul class="ring-list">
+        <li>Engagement Rings</li>
+        <li>Men's Bands</li>
+        <li>Women's Bands</li>
+      </ul>
     </div>
   </section>
 
