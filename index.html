@@ -7,7 +7,7 @@
   <meta name="description" content="Custom engagement rings and bands in Utah. We help you get the best ring for the best price. Text us." />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <link rel="canonical" href="https://utahringguys.com" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -63,9 +63,14 @@
     }
 
     .nav-logo-mark {
-      width: 28px;
-      height: 28px;
+      width: 36px;
+      height: 36px;
       flex-shrink: 0;
+      background-image: url('logo.png');
+      background-size: 150px auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 4px;
     }
 
     .nav-logo-text {
@@ -96,7 +101,7 @@
     @media (max-width: 480px) {
       nav { padding: 0 16px; }
       .nav-logo-text { font-size: 0.78rem; }
-      .nav-logo-mark { width: 24px; height: 24px; }
+      .nav-logo-mark { width: 30px; height: 30px; background-size: 125px auto; }
       .nav-cta { font-size: 0.72rem; padding: 8px 12px; }
     }
 
@@ -425,23 +430,48 @@
       margin-top: 12px;
     }
 
-    /* ── RING LIST ────────────────────────────────────────── */
-    .ring-list {
-      list-style: none;
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    /* ── RING ACCORDION ───────────────────────────────────── */
+    .ring-accordion { margin-top: 24px; }
 
-    .ring-list li {
+    .ring-item { border-bottom: 1px solid #EAE4DC; }
+    .ring-item:first-of-type { border-top: 1px solid #EAE4DC; }
+
+    .ring-item summary {
       font-size: 1.05rem;
+      font-weight: 500;
       color: var(--charcoal);
-      padding: 14px 0;
-      border-bottom: 1px solid #EAE4DC;
+      padding: 16px 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
-    .ring-list li:first-child { border-top: 1px solid #EAE4DC; }
+    .ring-item summary::-webkit-details-marker { display: none; }
+
+    .ring-item summary::after {
+      content: '+';
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--amber);
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .ring-item[open] summary::after { content: '−'; }
+    .ring-item[open] summary { color: var(--ink); }
+
+    .ring-item-body { padding: 2px 0 16px; }
+
+    .ring-item-body p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.7;
+      max-width: 500px;
+    }
 
     /* ── ABOUT ────────────────────────────────────────────── */
     .about {
@@ -566,12 +596,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <svg class="nav-logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="28" height="28" rx="4" fill="#0F0F0F"/>
-        <path d="M14 4.5 L23.5 11 L14 23.5 L4.5 11 Z" stroke="#C08A3A" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M4.5 11 L9.5 7 L14 4.5 L18.5 7 L23.5 11" stroke="#C08A3A" stroke-width="1.4" stroke-linejoin="round"/>
-        <line x1="4.5" y1="11" x2="23.5" y2="11" stroke="#C08A3A" stroke-width="0.7" opacity="0.4"/>
-      </svg>
+      <div class="nav-logo-mark" role="img" aria-label="Utah Ring Guys logo"></div>
       <span class="nav-logo-text">Utah Ring Guys</span>
     </div>
     <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring." class="nav-cta">Text Us &nbsp;·&nbsp; 801-999-8132</a>
@@ -659,12 +684,26 @@
   <section class="what-we-make">
     <div class="container">
       <div class="eyebrow">What we work on</div>
-      <div class="section-title">What we work on.</div>
-      <ul class="ring-list">
-        <li>Engagement Rings</li>
-        <li>Men's Bands</li>
-        <li>Women's Bands</li>
-      </ul>
+      <div class="ring-accordion">
+        <details class="ring-item">
+          <summary>Engagement Rings</summary>
+          <div class="ring-item-body">
+            <p>From classic solitaires you'd find in any store to fully custom pieces built from scratch — we handle everything in between.</p>
+          </div>
+        </details>
+        <details class="ring-item">
+          <summary>Men's Bands</summary>
+          <div class="ring-item-body">
+            <p>Meteorite, antler, Damascus steel, wood, carbon fiber, titanium — whatever material speaks to you, we can source it.</p>
+          </div>
+        </details>
+        <details class="ring-item">
+          <summary>Women's Bands</summary>
+          <div class="ring-item-body">
+            <p>Stackable bands, wedding bands, anniversary pieces — whatever fits the style.</p>
+          </div>
+        </details>
+      </div>
     </div>
   </section>
 
