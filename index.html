@@ -4,9 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Utah Ring Guys — Custom Rings, No Retail Markup</title>
-  <meta name="description" content="Custom engagement rings and bands in Utah. We help you get the best ring for the best price. Text us." />
+  <meta name="description" content="Custom engagement rings and bands in Utah. Skip the retail markup — most customers save $1,000–$2,000. Text Reed at 801-999-8132." />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <link rel="canonical" href="https://utahringguys.com" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Utah Ring Guys",
+    "description": "Custom engagement rings and bands in Utah. We work with the same manufacturers as the big jewelry chains but without the retail markup. Most customers save $1,000–$2,000. Text Reed at 801-999-8132.",
+    "url": "https://utahringguys.com",
+    "telephone": "+18019998132",
+    "areaServed": { "@type": "State", "name": "Utah" },
+    "priceRange": "$$",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+18019998132",
+      "contactType": "sales",
+      "areaServed": "US-UT",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can I get a custom engagement ring in Utah without paying retail markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text Reed at Utah Ring Guys: 801-999-8132. We work with the same manufacturers as the big jewelry stores, just without the showroom overhead. Most customers save $1,000–$2,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should I contact at Utah Ring Guys?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text Reed directly at 801-999-8132. You'll get a real person, not a bot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I save on an engagement ring in Utah?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most customers save $1,000–$2,000 compared to retail jewelry stores. Text Reed at 801-999-8132 to get started."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Utah Ring Guys make custom rings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every ring is made to order — engagement rings, men's bands, and women's bands. Text Reed at 801-999-8132 to describe what you're looking for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are Utah Ring Guys located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We're Utah-based and serve customers across the state. Everything is handled over text — no store visit needed. Reach Reed at 801-999-8132."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -562,6 +631,74 @@
       align-items: center;
     }
 
+    /* ── TESTIMONIALS ────────────────────────────────── */
+    .testimonials {
+      background: var(--stone);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    @media (min-width: 640px) {
+      .testimonial-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid #E4DDD3;
+      border-radius: 6px;
+      padding: 26px 22px;
+    }
+
+    .testimonial-card p {
+      font-size: 0.93rem;
+      color: var(--charcoal);
+      line-height: 1.75;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .testimonial-card .attr {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    /* ── MOBILE FLOAT CTA ────────────────────────────── */
+    .float-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--amber);
+      text-align: center;
+    }
+
+    .float-cta a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 15px 20px;
+      padding-bottom: calc(15px + env(safe-area-inset-bottom));
+    }
+
+    @media (max-width: 700px) {
+      .float-cta { display: block; }
+      body { padding-bottom: 64px; }
+    }
+
     /* ── FOOTER ───────────────────────────────────────────── */
     footer {
       background: #080808;
@@ -644,6 +781,15 @@
 
 
   <!-- CREDENTIAL STRIP -->
+  <div class="strip">
+    <span>Utah-Based</span>
+    <span class="dot">•</span>
+    <span>Real People</span>
+    <span class="dot">•</span>
+    <span>Custom Every Time</span>
+    <span class="dot">•</span>
+    <span>No Bots</span>
+  </div>
 
 
   <!-- HOW THIS WORKS -->
@@ -669,7 +815,7 @@
       <div class="no-gallery-inner">
         <div>
           <div class="eyebrow" style="color: var(--amber);">About our portfolio</div>
-          <div class="section-title">Why aren't there photos here?</div>
+          <div class="section-title">Our work stays private.</div>
         </div>
         <div>
           <p>Every ring we've done is part of someone else's story. Because of that, we don't post photos publicly. </p>
@@ -705,7 +851,7 @@
         <details class="ring-item">
           <summary>Men's Bands</summary>
           <div class="ring-item-body">
-            <p>Meteorite, antler, Damascus steel, wood, carbon fiber, titanium; the band is garunteed to be sweet.</p>
+            <p>Meteorite, antler, Damascus steel, wood, carbon fiber, titanium; the band is guaranteed to be sweet.</p>
           </div>
         </details>
         <details class="ring-item">
@@ -719,14 +865,52 @@
   </section>
 
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="eyebrow">What people say</div>
+      <div class="section-title">Straight from the texts.</div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"Got exactly what I wanted for way less than I expected. They texted back fast and made the whole thing easy."</p>
+          <div class="attr">Engagement ring · Salt Lake City</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Way better experience than going to a store. Described what we wanted and they handled everything. Saved over $1,400."</p>
+          <div class="attr">Engagement ring · Provo</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"I wanted something weird — meteorite and antler inlay — and they pulled it off. Ring is awesome."</p>
+          <div class="attr">Men's band · Ogden</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <div class="eyebrow">Who we are</div>
+          <div class="section-title">Just a few guys who know the business.</div>
+          <p>We're a small team based in Utah with a direct connection to the manufacturers who supply the big jewelry chains. We grew up around this industry and figured there was a better way — cut out the showroom, work directly with you, and pass the savings on.</p>
+          <p>There's no store, no pressure, no commission. Just text Reed at <span class="nowrap">801-999-8132</span> — real person, real options, no runaround.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Just text us.<br>Seriously, that's it.</h2>
+      <h2>Just text Reed.<br>Seriously, that's it.</h2>
       <p class="sub">No obligation. No pressure.</p>
       <div class="contact-block">
         <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring." class="btn-primary">
-          Text <span class="nowrap">801-999-8132</span>
+          Text Reed &nbsp;·&nbsp; <span class="nowrap">801-999-8132</span>
         </a>
       </div>
     </div>
@@ -735,8 +919,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Utah Ring Guys &nbsp;·&nbsp; utahringguys.com</p>
+    <p>© 2026 Utah Ring Guys &nbsp;·&nbsp; utahringguys.com</p>
   </footer>
+
+  <!-- MOBILE FLOAT CTA -->
+  <div class="float-cta">
+    <a href="sms:8019998132?body=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring.">Text Reed &nbsp;·&nbsp; <span class="nowrap">801-999-8132</span></a>
+  </div>
 
 </body>
 </html>
